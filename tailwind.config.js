@@ -1,11 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-      "./resources/**/*.blade.php",
-      "./resources/**/*.js",
-    ],
+    content: ["./resources/**/*.blade.php", "./resources/**/*.js"],
     theme: {
-      extend: {},
+        extend: {
+            fontFamily: {
+                poppins: ["Poppins", "sans-serif"],
+                roboto: ["Roboto", "sans-serif"],
+            },
+        },
     },
-    plugins: [require('flowbite/plugin')],
-  }
+    plugins: [require("flowbite/plugin")],
+};

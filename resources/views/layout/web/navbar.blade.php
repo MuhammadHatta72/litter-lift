@@ -1,9 +1,10 @@
-<nav class="px-4 md:px-12 border-b border-neutral-200 dark:bg-neutral-900 dark:border-neutral-700 md:sticky top-0 z-20">
+<nav class="px-4 md:px-12 border-b border-neutral-200 dark:bg-gray-900 dark:border-neutral-700 md:sticky top-0 z-20">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="#" class="flex items-center">
-            <span
+            {{-- <span
                 class="text-6xl font-bold font-serif bg-gradient-to-tr from-teal-300 to-yellow-300 text-transparent bg-clip-text">O</span>
-            <span class="text-4xl font-semibold text-gray-700 dark:text-white">Trash</span>
+            <span class="text-4xl font-semibold text-gray-700 dark:text-white">Trash</span> --}}
+            <img src="{{ asset('images/logo.png') }}" alt="logo" class="w-36 h-auto">
         </a>
         <button data-collapse-toggle="navbar-multi-level" type="button"
             class="inline-flex items-center p-2 ml-3 text-sm text-neutral-500 rounded-lg md:hidden hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:ring-neutral-600"
@@ -20,45 +21,46 @@
             <ul
                 class="flex flex-col items-center p-4 mt-4 border border-neutral-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:border-neutral-700">
                 <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-base font-bold font-poppins text-white bg-yellow-700 rounded md:bg-transparent md:text-yellow-400 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
-                        aria-current="page">Home</a>
+                    <a href="#home"
+                        class="block py-2 pl-3 pr-0 md:pr-4 text-base font-poppins text-neutral-600 rounded md:bg-transparent hover:text-[#FF512F] hover:font-bold md:p-0 md:dark:text-neutral-400 md:dark:hover:text-white dark:bg-bg-transparent md:dark:bg-transparent">Home</a>
                 </li>
                 <li>
-                    <a href="{{ url('/trash-scales') }}"
-                        class="block py-2 pl-3 pr-4 text-base font-medium font-poppins text-neutral-600 rounded hover:bg-neutral-100 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:text-neutral-400 md:dark:hover:text-white dark:hover:bg-neutral-700 md:dark:hover:bg-transparent">Timbang
-                        Sampah</a>
+                    <a href="#top-spots"
+                        class="block py-2 pl-3 pr-0 md:pr-4 text-base font-medium font-poppins text-neutral-600 rounded md:hover:bg-transparent md:border-0 hover:text-[#FF512F] md:hover:text-[#FF512F] hover:font-bold md:p-0 dark:text-neutral-400 md:dark:hover:text-white dark:hover:bg-neutral-700 md:dark:hover:bg-transparent">Top
+                        Spots</a>
                 </li>
-                {{-- <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-base font-medium font-poppins text-neutral-600 rounded hover:bg-neutral-100 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:text-neutral-400 md:dark:hover:text-white dark:hover:bg-neutral-700 md:dark:hover:bg-transparent">Kontak
-                            Kami</a>
-                    </li> --}}
+                <li>
+                    <a href="#gallerys"
+                        class="block py-2 pl-3 pr-0 md:pr-4 text-base font-medium font-poppins text-neutral-600 rounded md:hover:bg-transparent md:border-0 hover:text-[#FF512F] md:hover:text-[#FF512F] hover:font-bold md:p-0 dark:text-neutral-400 md:dark:hover:text-white dark:hover:bg-neutral-700 md:dark:hover:bg-transparent">Gallerys</a>
+                </li>
+                <li>
+                    <a href="#weight-trash"
+                        class="block py-2 pl-3 pr-0 md:pr-4 text-base font-medium font-poppins text-neutral-600 rounded md:hover:bg-transparent md:border-0 hover:text-[#FF512F] md:hover:text-[#FF512F] hover:font-bold md:p-0 dark:text-neutral-400 md:dark:hover:text-white dark:hover:bg-neutral-700 md:dark:hover:bg-transparent">Weigh
+                        Trash</a>
+                </li>
+                <li>
+                    <a href="#contact-us"
+                        class="block py-2 pl-3 pr-0 md:pr-4 text-base font-medium font-poppins text-neutral-600 rounded md:hover:bg-transparent md:border-0 hover:text-[#FF512F] md:hover:text-[#FF512F] hover:font-bold md:p-0 dark:text-neutral-400 md:dark:hover:text-white dark:hover:bg-neutral-700 md:dark:hover:bg-transparent">Contact
+                        Us</a>
+                </li>
                 <li>
                     <button type="button"
-                        class="text-white font-poppins text-base bg-gradient-to-r from-sky-400 to-yellow-300 hover:bg-gradient-to-r hover:from-sky-500 hover:to-yellow-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-yellow-400 dark:focus:ring-blue-800">Login</button>
+                        class="text-white font-poppins text-base bg-gradient-to-r from-[#FF512F] to-[#F09819] hover:bg-gradient-to-r hover:from-[#e44c2e] hover:to-[#b57211] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full px-5 py-2.5 text-center mr-3 md:mr-0 hover:shadow-md dark:bg-blue-600 dark:focus:ring-blue-800">Login</button>
                 </li>
                 <li>
-                    {{-- button darkmode --}}
-                    <button
-                        class="md:text-xl w-12 h-12 rounded-full text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:outline-none flex items-center justify-center "><span
-                            class="sr-only">Enable dark mode</span><svg xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                            aria-hidden="true" class="w-7 h-7">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z">
-                            </path>
+                    <button id="theme-toggle" type="button"
+                        class="hover:bg-gray-600 dark:hover:bg-white focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2.5 group">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-gray-500 group-hover:text-gray-100"
+                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-white group-hover:text-yellow-300"
+                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </button>
-                    {{-- button lightmode --}}
-                    <button
-                        class="text-2xl md:text-3xl w-12 h-12 rounded-full text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:outline-none flex items-center justify-center hidden"><span
-                            class="sr-only">Enable dark mode</span><svg xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-7 h-7">
-                            <path fill-rule="evenodd"
-                                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-                                clip-rule="evenodd"></path>
-                        </svg></button>
                 </li>
             </ul>
         </div>

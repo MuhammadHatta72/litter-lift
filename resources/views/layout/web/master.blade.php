@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scrool-smooth scroll-mt-14">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Otrash - Selamat Datang di site Otrash</title>
+    <title>Litter Lift - Selamat Datang di website Litter Lift</title>
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         nav.bg-scroll {
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(15px);
         }
     </style>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 
-<body>
+<body class="dark:bg-gray-900 ">
 
     {{-- Navbar --}}
     @include('layout.web.navbar')
@@ -49,38 +63,47 @@
             // lastScrollTop = currentScrollTop;
         });
 
-        //create darkmode and lightmode button
-        // const darkMode = localStorage.getItem('darkMode');
-        // const darkModeToggle = document.querySelector('#dark-mode-toggle');
-        // const enableDarkMode = () => {
-        //     // 1. Add the class to the body
-        //     document.body.classList.add('dark');
-        //     // 2. Update darkMode in localStorage
-        //     localStorage.setItem('darkMode', 'enabled');
-        // };
-        // const disableDarkMode = () => {
-        //     // 1. Remove the class from the body
-        //     document.body.classList.remove('dark');
-        //     // 2. Update darkMode in localStorage
-        //     localStorage.setItem('darkMode', null);
-        // };
-        // // If the user already visited and enabled darkMode
-        // // start things off with it on
-        // if (darkMode === 'enabled') {
-        //     enableDarkMode();
-        // }
-        // // When someone clicks the button
-        // darkModeToggle.addEventListener('click', () => {
-        //     // get their darkMode setting
-        //     darkMode = localStorage.getItem('darkMode');
-        //     // if it not current enabled, enable it
-        //     if (darkMode !== 'enabled') {
-        //         enableDarkMode();
-        //         // if it has been enabled, turn it off
-        //     } else {
-        //         disableDarkMode();
-        //     }
-        // });
+        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Change the icons inside the button based on previous settings
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        var themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function() {
+
+            // toggle icons inside button
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+
+                // if NOT set via local storage previously
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+
+        });
     </script>
 </body>
 

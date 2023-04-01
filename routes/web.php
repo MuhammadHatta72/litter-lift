@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\TrashScalesController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('web.home');
-});
-Route::get('/trash-scales', function () {
-    return view('web.trash_scales');
-});
+Route::get('/', [ViewController::class, 'home'])->name('index');
+
+Route::get('/trash-scales', [TrashScalesController::class, 'index'])->name('trash-scales');
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');

@@ -1,28 +1,24 @@
-@extends('layout.web.master')
+@extends('layout.index')
 
 @section('content')
     <div class="container mx-auto md:px-8 px-6 scroll-mt-28" id="home">
-        {{-- Hero Image --}}
-        <div class="flex md:flex-row flex-col">
-            <div class="md:py-24 md:w-1/2 md:order-1 order-2">
+        <div class="flex md:flex-row flex-col md:justify-between">
+            <div class="md:py-24 md:w-1/2 md:order-1 order-2 max-w-xl">
+                <h6 class="font-poppins font-semibold text-orange-400 dark:text-orange-500 text-lg md:text-xl mb-2">
+                    #LestarikanPantai
+                </h6>
                 <h1
-                    class="font-poppins font-medium text-3xl md:text-7xl text-neutral-700 dark:text-gray-200 mt-4 md:mt-0 mb-3">
-                    Pantai Sendang
+                    class="font-poppins font-bold text-3xl md:text-7xl text-neutral-700 dark:text-gray-200 mt-4 md:mt-0 mb-3 text-center md:text-start">
+                    Pantai Sendang <br> Biru Malang
                 </h1>
-                <h1 class="font-poppins font-medium text-3xl md:text-7xl text-neutral-700 dark:text-gray-200 mb-5 md:mb-10">
-                    Biru Malang</h1>
-                <p class="font-poppins text-base md:text-lg text-neutral-500 dark:text-gray-300 mb-5 md:mb-10 md:mr-2">Salah
-                    satu pantai yang
-                    terletak
-                    di
-                    Desa
-                    Sumber
-                    Agung, Kecamatan Sumber
-                    Manjing Wetan, 69 km ke arah
-                    selatan dari pusat Kota Malang</p>
-                <a href="#weight-trash"
-                    class="font-roboto text-sm px-8 py-2 rounded-full text-gray-100 md:text-lg bg-gradient-to-r from-[#FF512F] to-[#F09819] hover:bg-gradient-to-r hover:from-[#e44c2e] hover:to-[#b57211] hover:shadow-xl">
-                    Lestarikan Pantai</a>
+                <p class="font-poppins text-base md:text-lg text-neutral-500 dark:text-gray-300 mb-5 md:mb-10 md:mr-2">
+                    Nikmati pesona pantai yang memukau di Desa Sumber Agung, Kecamatan Sumber Manjing Wetan, hanya berjarak
+                    69 km ke arah selatan dari pusat Kota Malang. Rasakan sensasi liburan yang tak terlupakan dengan
+                    keindahan pantai yang menawan.
+                </p>
+                <a href="#weight-trash" class="btn btn-primary text-lg">
+                    Mulai Lestarikan Pantai!
+                </a>
             </div>
             <div class="md:w-1/2 md:order-2 order-1">
                 <img src="{{ asset('images/img-dummy1.png') }}" alt="pantai-sendang-biru" class="w-screen mt-4 md:mt-0">
@@ -32,7 +28,7 @@
 
         {{-- Statistik --}}
         <div
-            class="md:mx-10 mt-10 md:-mt-24 mb-10 md:mb-24 md:px-10 h-24 md:relative md:z-10 flex flex-row md:bg-white dark:bg-gray-700 md:rounded-full md:shadow-xl hover:md:shadow-lg w-full md:w-5/6">
+            class="md:mx-10 mt-10 md:-mt-24 mb-10 md:mb-24 md:px-10 h-24 md:relative md:z-10 flex flex-row md:bg-white dark:bg-gray-700 md:rounded-full md:shadow-xl hover:md:shadow-lg w-full md:w-5/6 animate-float">
             <div class="w-full flex flex-row items-center">
                 <div class="text-neutral-300 dark:text-gray-200 mr-4"><svg fill="none" stroke="currentColor"
                         stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -45,7 +41,8 @@
                     <h1 class="font-roboto font-semibold text-xl text-neutral-700 dark:text-gray-200 mb-1">Jumlah
                         Pengunjung
                     </h1>
-                    <p class="font-roboto font-medium text-sm text-neutral-400 dark:text-gray-200 mt-1">567
+                    <p class="font-roboto font-medium text-sm text-neutral-400 dark:text-gray-200 mt-1">
+                        {{ $visitor }}
                         Pengunjung
                     </p>
                 </div>
@@ -63,7 +60,8 @@
                     <h1 class="font-roboto font-semibold text-xl text-neutral-700 dark:text-gray-200 mb-1">Jumlah
                         Sampah
                     </h1>
-                    <p class="font-roboto font-medium text-sm text-neutral-400 dark:text-gray-200 mt-1">1000
+                    <p class="font-roboto font-medium text-sm text-neutral-400 dark:text-gray-200 mt-1">
+                        {{ $weightTotal }}
                         Kilogram
                     </p>
                 </div>

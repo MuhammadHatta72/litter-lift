@@ -2,26 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, -10px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+
+
+
 @layer components {
     .btn {
-        @apply text-white  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ;
+        @apply text-white  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2;
     }
 
     .btn-primary {
         @apply bg-gradient-to-r dark:from-orange-500 dark:via-orange-600 dark:to-orange-700 from-orange-400 via-orange-500 to-orange-600 hover:bg-gradient-to-br focus:ring-orange-300 dark:focus:ring-orange-800;
     }
+
+    .btn-secondary {
+        @apply bg-gradient-to-r dark:from-blue-500 dark:via-blue-600 dark:to-blue-700 from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-blue-300 dark:focus:ring-blue-800;
+    }
 }
 
 @layer utilities {
-  .nav-link {
-    @apply block py-2 pl-3 pr-0 md:pr-4 text-base font-poppins text-neutral-600 rounded md:bg-transparent hover:text-[#FF512F] md:p-0 md:dark:text-neutral-400 md:dark:hover:text-white dark:bg-transparent md:dark:bg-transparent;
-  }
+    .nav-link {
+        @apply block py-2 pl-3 pr-0 md:pr-4 text-base font-poppins text-neutral-600 rounded md:bg-transparent hover:text-[#FF512F] md:p-0 md:dark:text-neutral-400 md:dark:hover:text-white dark:bg-transparent md:dark:bg-transparent;
+    }
 
-  .input {
-    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500;
-  }
+    .footer-nav-link {
+        @apply mr-4 hover:underline md:mr-6 text-base font-medium font-poppins  md:hover:text-[#FF512F] md:p-0 dark:text-neutral-400 md:dark:hover:text-white;
+    }
 
-  .hamburger {
-    @apply inline-flex items-center p-2 ml-3 text-sm text-neutral-500 rounded-lg md:hidden hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:ring-neutral-600;
-  }
+    .input {
+        @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500;
+    }
+
+    .input-2 {
+        @apply border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500;
+    }
+
+    .hamburger {
+        @apply inline-flex items-center p-2 ml-3 text-sm text-neutral-500 rounded-lg md:hidden hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:ring-neutral-600;
+    }
+
+    .drop-zone {
+        @apply flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600;
+    }
 }

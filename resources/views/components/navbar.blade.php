@@ -28,18 +28,27 @@
                         <a href="#gallerys" class="nav-link">Gallerys</a>
                     </li>
                     <li>
-                        <a href="#weight-trash" class="nav-link">Weigh
-                            Trash</a>
+                        <a href="#weight-trash" class="nav-link">Weight Trash</a>
                     </li>
                     <li>
-                        <a href="#contact-us" class="nav-link">Contact
-                            Us</a>
+                        <a href="#contact-us" class="nav-link">Contact Us </a>
                     </li>
                 @endif
                 <li>
-                    <button type="button" class="btn btn-primary">
-                        Login
-                    </button>
+                    @auth
+                        {{-- circle and get the user profile image --}}
+                        <a class="flex items-center flex-row">
+                            <img src="{{ Auth::user()->photo }}" alt="profile" class="w-10 h-10 rounded-full">
+                            {{-- logout --}}
+                            <a href="{{ route('logout') }}"
+                                class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+                                {{ __('Logout') }}
+                            </a>
+                        @else
+                            <a type="button" class="btn btn-primary" href="{{ route('login') }}">
+                                Login
+                            </a>
+                        @endauth
                 </li>
                 <li>
                     <button id="theme-toggle" type="button"

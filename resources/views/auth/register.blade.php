@@ -10,12 +10,12 @@
                 @csrf
                 <div class="mb-6">
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                    <input type="email" name="email" id="email" class="input" placeholder="user@gmail.com" required>
+                    <input type="email" id="email" class="input" placeholder="user@gmail.com" required>
                 </div>
                 <div class="mb-6">
                     <label for="password"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                    <input type="password" name="password" id="password" placeholder="********" class="input" required>
+                    <input type="password" id="password" placeholder="********" class="input" required>
                     <a href="#"
                         class="text-sm text-gray-600 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-300 w-full flex justify-end mt-2">Forgot
                         password?</a>

@@ -7,26 +7,20 @@
             <ul
                 class="flex flex-wrap md:items-center justify-center mb-3 md:mb-0 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
-                    <a href="#"
-                        class="mr-4 hover:underline md:mr-6 text-base font-medium font-poppins hover:no-underline hover:font-semibold md:hover:text-[#FF512F] md:p-0 dark:text-neutral-400 md:dark:hover:text-white">Home</a>
+                    <a href="#" class="footer-nav-link">Home</a>
                 </li>
                 <li>
-                    <a href="#top-spots"
-                        class="mr-4 hover:underline md:mr-6 text-base font-medium font-poppins hover:no-underline hover:font-semibold md:hover:text-[#FF512F] md:p-0 dark:text-neutral-400 md:dark:hover:text-white">Top
+                    <a href="#top-spots" class="footer-nav-link">Top
                         Spots</a>
                 </li>
                 <li>
-                    <a href="#gallerys"
-                        class="mr-4 hover:underline md:mr-6 text-base font-medium font-poppins hover:no-underline hover:font-semibold md:hover:text-[#FF512F] md:p-0 dark:text-neutral-400 md:dark:hover:text-white ">Gallerys</a>
+                    <a href="#gallerys" class="footer-nav-link ">Gallerys</a>
                 </li>
                 <li>
-                    <a href="#weight-trash"
-                        class="mr-4 hover:underline md:mr-6 text-base font-medium font-poppins hover:no-underline hover:font-semibold md:hover:text-[#FF512F] md:p-0 dark:text-neutral-400 md:dark:hover:text-white">Weigh
-                        Trash</a>
+                    <a href="#weight-trash" class="footer-nav-link">Weight Trash</a>
                 </li>
                 <li>
-                    <a href="#contact-us"
-                        class="mr-4 hover:underline md:mr-6 text-base font-medium font-poppins hover:no-underline hover:font-semibold md:hover:text-[#FF512F] md:p-0 dark:text-neutral-400 md:dark:hover:text-white">Contact
+                    <a href="#contact-us" class="footer-nav-link">Contact
                         Us</a>
                 </li>
             </ul>

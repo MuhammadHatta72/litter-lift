@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\TrashScalesController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TrashController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// GET
 Route::get('/', [ViewController::class, 'home'])->name('index');
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/trash-scales', [TrashScalesController::class, 'index'])->name('trash-scales');
+// POST
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+// Resource
+// Route::resource('trash-scales', TrashController::class);
+Route::get('/trash-scales', [TrashController::class, 'index'])->name('trash-scales.index');
+Route::post('/trash-scales', [TrashController::class, 'store'])->name('trash-scales.store');

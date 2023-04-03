@@ -4,6 +4,9 @@
     <div class="container mx-auto md:px-8 px-6 scroll-mt-28" id="home">
         <div class="flex md:flex-row flex-col md:justify-between">
             <div class="md:py-24 md:w-1/2 md:order-1 order-2 max-w-xl">
+                <h6 class="font-poppins font-semibold text-orange-400 dark:text-orange-500 text-lg md:text-xl mb-2">
+                    #LestarikanPantai
+                </h6>
                 <h1
                     class="font-poppins font-bold text-3xl md:text-7xl text-neutral-700 dark:text-gray-200 mt-4 md:mt-0 mb-3 text-center md:text-start">
                     Pantai Sendang <br> Biru Malang
@@ -25,7 +28,7 @@
 
         {{-- Statistik --}}
         <div
-            class="md:mx-10 mt-10 md:-mt-24 mb-10 md:mb-24 md:px-10 h-24 md:relative md:z-10 flex flex-row md:bg-white dark:bg-gray-700 md:rounded-full md:shadow-xl hover:md:shadow-lg w-full md:w-5/6">
+            class="md:mx-10 mt-10 md:-mt-24 mb-10 md:mb-24 md:px-10 h-24 md:relative md:z-10 flex flex-row md:bg-white dark:bg-gray-700 md:rounded-full md:shadow-xl hover:md:shadow-lg w-full md:w-5/6 animate-float">
             <div class="w-full flex flex-row items-center">
                 <div class="text-neutral-300 dark:text-gray-200 mr-4"><svg fill="none" stroke="currentColor"
                         stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -38,7 +41,8 @@
                     <h1 class="font-roboto font-semibold text-xl text-neutral-700 dark:text-gray-200 mb-1">Jumlah
                         Pengunjung
                     </h1>
-                    <p class="font-roboto font-medium text-sm text-neutral-400 dark:text-gray-200 mt-1">567
+                    <p class="font-roboto font-medium text-sm text-neutral-400 dark:text-gray-200 mt-1">
+                        {{ $visitor }}
                         Pengunjung
                     </p>
                 </div>
@@ -56,7 +60,8 @@
                     <h1 class="font-roboto font-semibold text-xl text-neutral-700 dark:text-gray-200 mb-1">Jumlah
                         Sampah
                     </h1>
-                    <p class="font-roboto font-medium text-sm text-neutral-400 dark:text-gray-200 mt-1">1000
+                    <p class="font-roboto font-medium text-sm text-neutral-400 dark:text-gray-200 mt-1">
+                        {{ $weightTotal }}
                         Kilogram
                     </p>
                 </div>

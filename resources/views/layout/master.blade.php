@@ -21,7 +21,7 @@
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-            '(prefers-color-scheme: dark)').matches)) {
+                '(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark')
@@ -38,7 +38,7 @@
         const navbar = document.querySelector('nav');
         let lastScrollTop = 0;
 
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             const currentScrollTop = document.documentElement.scrollTop;
             if (currentScrollTop > 0) {
                 navbar.classList.add('bg-scroll');
@@ -53,7 +53,7 @@
 
         // Change the icons inside the button based on previous settings
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-            '(prefers-color-scheme: dark)').matches)) {
+                '(prefers-color-scheme: dark)').matches)) {
             themeToggleLightIcon.classList.remove('hidden');
         } else {
             themeToggleDarkIcon.classList.remove('hidden');
@@ -61,7 +61,7 @@
 
         var themeToggleBtn = document.getElementById('theme-toggle');
 
-        themeToggleBtn.addEventListener('click', function () {
+        themeToggleBtn.addEventListener('click', function() {
 
             // toggle icons inside button
             themeToggleDarkIcon.classList.toggle('hidden');

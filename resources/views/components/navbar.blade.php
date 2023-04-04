@@ -1,5 +1,7 @@
-<nav class="px-4 md:px-12 border-b border-neutral-200 dark:bg-gray-900 dark:border-neutral-700 md:sticky top-0 z-20">
-    <div class="container flex flex-wrap items-center justify-between mx-auto">
+<nav
+    class="px-4 xl:px-16 lg:px-12 md:px-10 border-b border-neutral-200 dark:bg-gray-900 dark:border-neutral-700 md:sticky top-0 z-20">
+    <div
+        class="flex flex-wrap items-center justify-between md:justify-center lg:justify-between xl:justify-between mx-auto">
         <a href="{{ route('index') }}" class="flex items-center">
             <img src="{{ asset('images/logo.png') }}" alt="logo" class="w-36 h-auto">
         </a>
@@ -15,7 +17,7 @@
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
             <ul
-                class="flex flex-col items-center justify-center p-4 mt-4 border border-neutral-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:border-neutral-700">
+                class="flex flex-col items-center justify-center p-4 mt-4 border border-neutral-100 rounded-lg md:flex-row xl:space-x-8 lg:space-x-5 md:space-x-3 md:mt-0 md:text-sm md:font-medium md:border-0 dark:border-neutral-700">
                 <li>
                     <a href="/" class="nav-link">Home</a>
                 </li>

@@ -1,14 +1,17 @@
 @extends('layout.index')
 
 @section('content')
-    <div class="container mx-auto md:px-8 px-6 scroll-mt-28" id="home">
-        <div class="flex md:flex-row flex-col md:justify-between">
-            <div class="md:py-24 md:w-1/2 md:order-1 order-2 max-w-xl">
-                <h6 class="font-poppins font-semibold text-orange-400 dark:text-orange-500 text-lg md:text-xl mb-2">
+    <div class="px-4 md:px-10 lg:px-12 xl:px-16 scroll-mt-28" id="home">
+        <div
+            class="flex flex-col md:flex-col lg:flex-row xl:flex-row md:justify-center lg:justify-between xl:justify-between">
+            <div
+                class="md:py-16 lg:py-24 md:w-full lg:w-1/2 order-2 md:order-2 lg:order-1 max-w-xl md:max-w-none lg:max-w-xl">
+                <h6
+                    class="font-poppins font-semibold text-orange-400 dark:text-orange-500 text-lg md:text-xl my-2 lg:my-0 lg:mb-2">
                     #LestarikanPantai
                 </h6>
                 <h1
-                    class="font-poppins font-bold text-3xl md:text-7xl text-neutral-700 dark:text-gray-200 mt-4 md:mt-0 mb-3 text-center md:text-start">
+                    class="font-poppins font-bold text-3xl md:text-5xl xl:text-7xl text-neutral-700 dark:text-gray-200 mt-4 md:mt-0 mb-3 text-left">
                     Pantai Sendang <br> Biru Malang
                 </h1>
                 <p class="font-poppins text-base md:text-lg text-neutral-500 dark:text-gray-300 mb-5 md:mb-10 md:mr-2">
@@ -20,15 +23,16 @@
                     Mulai Lestarikan Pantai!
                 </a>
             </div>
-            <div class="md:w-1/2 md:order-2 order-1">
-                <img src="{{ asset('images/img-dummy1.png') }}" alt="pantai-sendang-biru" class="w-screen mt-4 md:mt-0">
+            <div class="md:w-full lg:w-1/2 order-1 md:order-1 lg:order-2">
+                <img src="{{ asset('images/img-psm.png') }}" alt="pantai-sendang-biru"
+                    class="w-screen lg:w-full mt-4 md:mt-0">
             </div>
         </div>
         {{-- End Hero Image --}}
 
         {{-- Statistik --}}
         <div
-            class="md:mx-10 mt-10 md:-mt-24 mb-10 md:mb-24 md:px-10 h-24 md:relative md:z-10 flex flex-row md:bg-white dark:bg-gray-700 md:rounded-full md:shadow-xl hover:md:shadow-lg w-full md:w-5/6 animate-float">
+            class="xl:mx-10 mt-12 md:mt-6 lg:-mt-24 mb-10 md:mb-16 lg:mb-24 md:px-10 h-24 lg:relative md:z-10 flex flex-row md:bg-white dark:bg-gray-700 md:rounded-full md:shadow-xl hover:md:shadow-lg w-full lg:w-5/6 animate-float">
             <div class="w-full flex flex-row items-center">
                 <div class="text-neutral-300 dark:text-gray-200 mr-4"><svg fill="none" stroke="currentColor"
                         stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -72,7 +76,7 @@
     </div>
 
     {{-- Top Tourist --}}
-    <div class="container mx-auto md:px-8 px-6 mt-10 md:mb-24 mb-16 scroll-mt-28" id="top-spots">
+    <div class="px-4 md:px-10 lg:px-12 xl:px-16 mt-10 md:mb-24 mb-16 scroll-mt-28" id="top-spots">
         <div class="pb-6">
             <h1 class="font-roboto font-semibold text-2xl md:text-4xl text-neutral-700 dark:text-gray-200 mb-2 md:mb-3">
                 Top Tourist Spots
@@ -81,10 +85,10 @@
                 Sendang
                 Biru</p>
         </div>
-        <div class="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
+        <div class="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-10 lg:grid-cols-4 lg:gap-6">
             <div class="transform hover:scale-105 hover:shadow-lg hover:rounded-xl duration-300 pb-6 group">
                 <img src="{{ asset('images/img8.jpg') }}" alt="4 Tourist Spots"
-                    class="rounded-xl w-full h-96 group-hover:rounded-b-none group-hover:rounded-b-none">
+                    class="rounded-xl w-full h-96 group-hover:rounded-b-none">
                 <div>
                     <h2
                         class="mt-4 font-roboto text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
@@ -136,7 +140,7 @@
 
     <div class="bg-orange-50 dark:bg-gray-800 md:mb-14 scroll-mt-20" id="gallerys">
         {{-- Gallery --}}
-        <div class="container mx-auto md:px-8 px-6 rounded-lg md:rounded-[40px]">
+        <div class="px-4 md:px-10 lg:px-12 xl:px-16 rounded-lg md:rounded-[40px]">
             <div class="py-10">
                 <h1
                     class="font-roboto font-semibold md:text-4xl text-2xl text-center text-neutral-700 dark:text-gray-200 md:mb-3 mb-2">
@@ -147,7 +151,7 @@
                     Biru</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pb-14">
+            <div class="grid grid-cols-2 gap-2 xl:grid-cols-4 xl:gap-4 pb-14">
                 <div class="grid gap-4">
                     <div>
                         <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300"
@@ -214,20 +218,20 @@
     {{-- <div class="w-full h-64 bg-fixed" style="
       background-image: url('{{ asset('images/img3.jpg') }}');
     "></div> --}}
-    <div class="w-full h-96 md:px-8 px-6 bg-gradient-to-r from-[#FF512F] to-[#F09819] dark:from-gray-800 dark:to-gray-700 flex flex-col justify-center items-center scroll-mt-20"
+    <div class="w-full h-96 px-4 md:px-10 lg:px-12 xl:px-16 bg-gradient-to-r from-[#FF512F] to-[#F09819] dark:from-gray-800 dark:to-gray-700 flex flex-col justify-center items-center scroll-mt-20"
         id="weight-trash">
         <h2
             class="font-roboto font-semibold md:text-4xl text-2xl text-center md:text-left text-white dark:text-gray-200 md:mb-6 mb-4">
             Mari
             kita pulangkan sampah-sampah Kita ke tempat yang semestinya</h2>
         <a href="{{ url('trash-scales') }}"
-            class="inline-block py-2 px-6 bg-white dark:bg-gray-300 text-[#FF512F] dark:text-gray-900 rounded-full shadow-sm hover:shadow-lg font-semibold uppercase tracking-wider font-bold text-base">Mulai
+            class="inline-block py-2 px-6 bg-white dark:bg-gray-300 text-[#FF512F] dark:text-gray-900 rounded-full shadow-sm hover:shadow-lg font-semibold uppercase tracking-wider text-base">Mulai
             Kumpulkan Sampah</a>
     </div>
     {{-- End Button Weight Trash --}}
 
     {{-- Contact Us --}}
-    <div class="container mx-auto md:px-8 px-6 flex flex-col md:flex-row my-14 scroll-mt-28" id="contact-us">
+    <div class="px-4 md:px-10 lg:px-12 xl:px-16 flex flex-col md:flex-row my-14 scroll-mt-28" id="contact-us">
         <div class="md:w-1/2 mt-8 md:mt-0 order-2 md:order-1">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31573.62510490036!2d112.65887902699654!3d-8.430785761973047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd60113eb17382f%3A0xbd94402fbf21878c!2sPantai%20Sendangbiru!5e0!3m2!1sid!2sid!4v1680232405732!5m2!1sid!2sid"

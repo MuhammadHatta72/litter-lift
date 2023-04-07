@@ -16,13 +16,7 @@ class TrashController extends Controller
      */
     public function index()
     {
-        // get only top 3 user that has the sum of trash weight
-        $leaderboard = Trash::selectRaw('user_id, SUM(weight) as total_weight')
-            ->groupBy('user_id')
-            ->orderBy('total_weight', 'desc')
-            ->limit(3)
-            ->get();
-        return view('pages.trash_scales', compact('leaderboard'));
+        return view('pages.trash_scales');
     }
 
     /**

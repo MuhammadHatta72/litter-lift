@@ -30,7 +30,8 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-    public function register(StoreRegisterRequest $request) {
+    public function register(StoreRegisterRequest $request): \Illuminate\Http\RedirectResponse
+    {
         $request->validated();
         $user = User::create([
             'name' => $request->name,
@@ -38,7 +39,6 @@ class AuthController extends Controller
             'photo' => 'https://source.boringavatars.com/beam/120/' . $request->email . '?colors=fca2e1,93b5ff,6be4dc,f9e3a9,4a6cb6',
             'password' => Hash::make($request->password),
         ]);
-
         Auth::login($user);
         toast()->success('Registration successful.', 'Success');
         return redirect()->route('index');

@@ -16,7 +16,8 @@ class ViewController extends Controller
         return view('pages.home', compact('visitor', 'weightTotal'));
     }
 
-    public function leaderboard() {
+    public function leaderboard()
+    {
         $leaderboard = Trash::selectRaw('user_id, SUM(weight) as total_weight')
             ->groupBy('user_id')
             ->orderBy('total_weight', 'desc')

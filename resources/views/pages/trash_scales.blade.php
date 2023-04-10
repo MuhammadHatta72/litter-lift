@@ -4,27 +4,51 @@
     <div class="w-full h-screen bg-cover bg-center bg-scroll flex items-center justify-center"
         style="background-image: url('{{ asset('images/img6.jpg') }}')">
         <div
-            class="px-6 py-8 lg:px-6 lg:py-8 mx-1 lg:mx-0 flex flex-col bg-gray-200 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 -mt-12 group rounded-xl shadow-md hover:shadow-xl">
+            class="px-6 py-8 lg:px-6 lg:py-8 mx-1 lg:mx-0 flex flex-col bg-gray-200 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 -mt-12 group rounded-xl shadow-md hover:shadow-xl w-full h-full justify-center items-center">
             <h1 class="font-poppins font-bold text-2xl md:text-4xl xl:text-6xl text-white dark:text-gray-300 text-center">
-                PANTAI SENDANG BIRU</h1>
+                PANTAI SENDANG BIRU
+            </h1>
             <h2
                 class="font-poppins font-semibold text-sm md:text-3xl xl:text-5xl text-gray-200 dark:text-gray-200 mt-2 lg:mt-4 text-center">
-                Lestarikan Alam Untuk Anak Cucu Kita</h2>
+                Lestarikan Alam Untuk Anak Cucu Kita
+            </h2>
             <a href="#"
-                class="inline-block mx-auto mt-2 lg:mt-4 py-2 px-7 lg:py-2 lg:px-8 bg-white dark:bg-gray-300 text-[#FF512F] dark:text-gray-900 rounded-full shadow-sm hover:shadow-lg font-bold uppercase tracking-wider text-sm md:text-base lg:text-lg">Mulai
-                Timbang</a>
+                class="inline-block mx-auto mt-2 lg:mt-4 py-2 px-7 lg:py-2 lg:px-8 bg-white dark:bg-gray-300 text-[#FF512F] dark:text-gray-900 rounded-full shadow-sm hover:shadow-lg font-bold uppercase tracking-wider text-sm md:text-base lg:text-lg">
+                Mulai Timbang
+            </a>
         </div>
     </div>
 
     <div class="mb-10">
         <div class="bg-white dark:bg-gray-800 md:px-12 px-8 py-14  rounded-t-3xl -mt-24 relative z-10">
-            <div class="max-w-lg mx-auto">
-                {{-- TODO: MAKE LEADERBOARD, GET THE DATA IS $leaderboard, ONLY SHOW 3, AND THEN THERE WILL BE SEE ALL AND SHOW ALL OF THEM ON DIFFERENT PAGES --}}
-                <div id="leaderboard" class="text-white"> {{-- change this, just for information the data raw --}}
-                    {{-- @foreach ($leaderboard as $item)
-                        <p>{{ $item->user->name }} - {{ $item }}</p>
-                    @endforeach --}}
+            <h1
+                class="font-roboto font-semibold text-center md:text-4xl text-2xl text-neutral-700 dark:text-gray-200 md:mb-3 mb-2">
+                3 Top Rangking
+            </h1>
+            <div class="items-center justify-center mx-auto max-w-3xl">
+                <div id="leaderboard" class="text-white gap-6 flex flex-col md:flex-row">
+                    @foreach ($leaderboard as $item)
+                        <div
+                            class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-gray-100 hover:ring-white transition-all duration-300 ease-in-out cursor-default">
+                            <div class="flex flex-col items-center justify-center p-4">
+                                <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ $item->user->photo }}"
+                                    alt="avatar">
+                                <h5 class="mb-1 text-xl text-center font-medium text-gray-900 dark:text-white">
+                                    {{ $item->user->name }}
+                                </h5>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">
+                                    {{ $item->total_weight }} gram
+                                </span>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
+                <a href="{{ route('leaderboard') }}"
+                    class="my-12 block text-white btn btn-primary">
+                    Lihat Semua
+                </a>
+            </div>
+            <div class="max-w-lg mx-auto">
                 <div class="mb-4">
                     <h1
                         class="font-roboto font-semibold text-center md:text-4xl text-2xl text-neutral-700 dark:text-gray-200 md:mb-3 mb-2">

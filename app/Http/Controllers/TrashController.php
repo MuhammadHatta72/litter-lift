@@ -16,7 +16,21 @@ class TrashController extends Controller
      */
     public function index()
     {
-        return view('pages.trash_scales');
+        $leaderboard = Trash::selectRaw('user_id, SUM(weight) as total_weight')
+            ->groupBy('user_id')
+            ->orderBy('total_weight', 'desc')
+            ->limit(3)
+            ->get();
+
+        $userRank = Trash::selectRaw('user_id, SUM(weight) as total_weight')
+            ->groupBy('user_id')
+            ->orderBy('total_weight', 'desc')
+            ->get();
+
+        $userRank = $userRank->search(function ($item, $key) {
+            return $item->user_id == auth()->user()->id;
+        }) + 1;
+        return view('pages.trash_scales', compact('leaderboard', 'userRank'));
     }
 
     /**

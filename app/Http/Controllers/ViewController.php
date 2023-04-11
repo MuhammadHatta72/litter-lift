@@ -21,8 +21,18 @@ class ViewController extends Controller
         $leaderboard = Trash::selectRaw('user_id, SUM(weight) as total_weight')
             ->groupBy('user_id')
             ->orderBy('total_weight', 'desc')
-            ->limit(3)
+            ->limit(10)
             ->get();
-        return view('pages.leaderboard', compact('leaderboard'));
+
+        $userRank = Trash::selectRaw('user_id, SUM(weight) as total_weight')
+            ->groupBy('user_id')
+            ->orderBy('total_weight', 'desc')
+            ->get();
+
+        $userRank = $userRank->search(function ($item, $key) {
+            return $item->user_id == auth()->user()->id;
+        }) + 1;
+
+        return view('pages.leaderboard', compact('leaderboard', 'userRank'));
     }
 }

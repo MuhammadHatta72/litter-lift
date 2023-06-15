@@ -24,7 +24,7 @@ class StoreTrashRequest extends FormRequest
         return [
             'weight' => ['required', 'numeric', 'min:0'],
             'proof_of_weight' => ['required', 'mimes:jpg,jpeg,png', 'max:2048'],
-            'message' => ['required', 'string', 'max:255'],
+            // 'message' => ['required', 'string', 'max:255'],
         ];
     }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Trash;
 use App\Http\Requests\StoreTrashRequest;
 use App\Http\Requests\UpdateTrashRequest;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +15,7 @@ class TrashController extends Controller
      */
     public function index()
     {
+        $this->authorize('isUser');
         $leaderboard = Trash::selectRaw('user_id, SUM(weight) as total_weight')
             ->groupBy('user_id')
             ->orderBy('total_weight', 'desc')
@@ -38,6 +38,7 @@ class TrashController extends Controller
      */
     public function create()
     {
+        $this->authorize('isUser');
     }
 
     /**
@@ -45,26 +46,33 @@ class TrashController extends Controller
      */
     public function store(StoreTrashRequest $request)
     {
+        $this->authorize('isUser');
         $request->validated();
         // upload image to storage
+        $proof_trash = "proof_trash_" . time() . "." . $request->proof_of_weight->extension();
+        $request->file('proof_of_weight')->move(public_path('assets/proof_trash/'), $proof_trash);
         Trash::create([
             'user_id' => Auth::user()->id,
             'weight' => $request->weight,
-            'proof_of_weight' => $request->file('proof_of_weight')->store('public/images'),
-            'message' => $request->message,
+            'proof_of_weight' => $proof_trash,
+            'status' => 'not_yet_weighed',
             'date' => now(),
         ]);
 
         toast('Trash weight has been added!', 'success');
-        return redirect()->route('trash-scales.index');
+        return redirect('cart-trash');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Trash $trash)
+    public function show($id)
     {
-        //
+        $this->authorize('isUser');
+        $data = [
+            'trash' => Trash::findOrFail($id)
+        ];
+        return view('pages.admin.cart-trashs.show', $data);
     }
 
     /**
@@ -72,7 +80,7 @@ class TrashController extends Controller
      */
     public function edit(Trash $trash)
     {
-        //
+        $this->authorize('isUser');
     }
 
     /**
@@ -80,7 +88,7 @@ class TrashController extends Controller
      */
     public function update(UpdateTrashRequest $request, Trash $trash)
     {
-        //
+        $this->authorize('isUser');
     }
 
     /**
@@ -88,6 +96,6 @@ class TrashController extends Controller
      */
     public function destroy(Trash $trash)
     {
-        //
+        $this->authorize('isUser');
     }
 }

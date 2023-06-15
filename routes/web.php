@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\CartTrashController;
+use App\Http\Controllers\Admin\SwapTrashController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\TrashController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +33,16 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::resource('trash-scales', TrashController::class)
+        ->names([
+            'index' => 'trash-scales.index',
+            'store' => 'trash-scales.store',
+            'show' => 'trash-scales.show',
+        ]);
+    Route::resource('users', UserController::class);
+    Route::resource('profile', ProfileController::class);
+    Route::resource('cart-trash', CartTrashController::class);
+    Route::resource('swap-trash', SwapTrashController::class);
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/trash-scales', [TrashController::class, 'index'])->name('trash-scales.index');
-    Route::post('/trash-scales', [TrashController::class, 'store'])->name('trash-scales.store')->middleware('auth');
 });

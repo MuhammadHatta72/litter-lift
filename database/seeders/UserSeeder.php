@@ -16,10 +16,14 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'photo' => 'https://source.boringavatars.com/beam/120/admin@gmail.com?colors=fca2e1,93b5ff,6be4dc,f9e3a9,4a6cb6',
+            'gender' => 'Laki-laki',
+            'address' => 'Malang',
+            'phone' => '081554073743',
+            'photo' => 'not_found',
             'password' => bcrypt('password'),
+            'role' => 'admin',
         ]);
 
-        User::factory(24)->create();
+        // User::factory(24)->create();
     }
 }

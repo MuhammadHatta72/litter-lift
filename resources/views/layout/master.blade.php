@@ -31,8 +31,11 @@
 </head>
 
 <body class="dark:bg-gray-900">
+
     @include('sweetalert::alert')
+
     @yield('master.content')
+
     @vite('resources/js/app.js')
     <script>
         // Navbar Scroll

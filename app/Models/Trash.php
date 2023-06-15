@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $date
  * @property int $weight
  * @property string $proof_of_weight
- * @property string $message
+ * @property string $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\User $user
@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Trash whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Trash whereDate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Trash whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Trash whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Trash whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Trash whereProofOfWeight($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Trash whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Trash whereUserId($value)

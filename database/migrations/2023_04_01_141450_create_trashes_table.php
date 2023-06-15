@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('date');
             $table->integer('weight');
             $table->string('proof_of_weight');
-            $table->string('message');
+            $table->string('status');
             $table->timestamps();
         });
     }

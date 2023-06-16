@@ -6,7 +6,7 @@
     <title>Litter Lift - Official Pantai Sendang Biru</title>
     <link href="{{ asset('images/logo.png') }}" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -24,7 +24,6 @@
 
     @yield('master.content')
 
-    @vite('resources/js/app.js')
     <script>
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -67,6 +66,8 @@
 
         });
     </script>
+
+
 </body>
 
 </html>

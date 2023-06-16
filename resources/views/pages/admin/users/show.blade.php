@@ -31,15 +31,27 @@
                     <div class="grid gap-6 mb-6 md:grid-cols-1">
                         <div>
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
-                            <h2 class="block mb-2 text-base text-gray-500 dark:text-white">{{$user->name}}</h2>
+                            <h2 class="block mb-1 text-base text-gray-500 dark:text-white">{{$user->name}}</h2>
                         </div>
                         <div>
-                            <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                            <h2 class="block mb-2 text-base text-gray-500 dark:text-white">{{$user->email}}</h2>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                            <h2 class="block mb-1 text-base text-gray-500 dark:text-white">{{$user->email}}</h2>
+                        </div>
+                        <div>
+                            <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis Kelamin</label>
+                            <h2 class="block mb-1 text-base text-gray-500 dark:text-white">{{$user->gender}}</h2>
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor Telepon</label>
+                            <h2 class="block mb-1 text-base text-gray-500 dark:text-white">{{$user->phone}}</h2>
+                        </div>
+                        <div>
+                            <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
+                            <h2 class="block mb-1 text-base text-gray-500 dark:text-white">{{$user->address}}</h2>
                         </div>
                         <div>
                             <label for="role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role</label>
-                            <h2 class="block mb-2 text-base text-gray-500 dark:text-white">{{$user->role}}</h2>
+                            <h2 class="block mb-1 text-base text-gray-500 dark:text-white">{{$user->role}}</h2>
                         </div>
                     </div>
 

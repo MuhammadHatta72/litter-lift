@@ -13,7 +13,20 @@ return new class extends Migration
     {
         Schema::create('swap_trashes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('token');
+            $table->string('date');
+            $table->string('total_weight');
+            $table->string('total_money');
+            $table->string('status_swap');
+            $table->string('status');
+            $table->string('choose_ticket_money');
+            $table->string('no_rekening');
+            $table->string('bank_name');
+            $table->string('message');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

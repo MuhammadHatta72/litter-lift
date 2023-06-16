@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SwapTrash;
 use App\Models\Trash;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,21 +19,23 @@ class ViewController extends Controller
 
     public function leaderboard()
     {
-        $leaderboard = Trash::selectRaw('user_id, SUM(weight) as total_weight')
+        $leaderboard = SwapTrash::selectRaw('user_id, SUM(total_weight) as total_weight_user')
+            ->where('status', 'done')
             ->groupBy('user_id')
-            ->orderBy('total_weight', 'desc')
-            ->limit(10)
+            ->orderBy('total_weight_user', 'desc')
+            ->limit(3)
+            ->get();
+        $userRank = SwapTrash::selectRaw('user_id, SUM(total_weight) as total_weight_user')
+            ->where('status', 'done')
+            ->groupBy('user_id')
+            ->orderBy('total_weight_user', 'desc')
+            ->limit(3)
             ->get();
 
-        $userRank = Trash::selectRaw('user_id, SUM(weight) as total_weight')
-            ->groupBy('user_id')
-            ->orderBy('total_weight', 'desc')
-            ->get();
-
+        // dd($userRank);
         $userRank = $userRank->search(function ($item, $key) {
             return $item->user_id == auth()->user()->id;
         }) + 1;
-
         return view('pages.leaderboard', compact('leaderboard', 'userRank'));
     }
 }

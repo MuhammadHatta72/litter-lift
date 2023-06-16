@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Trash;
 use App\Http\Requests\StoreTrashRequest;
 use App\Http\Requests\UpdateTrashRequest;
+use App\Models\SwapTrash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,15 +17,17 @@ class TrashController extends Controller
     public function index()
     {
         $this->authorize('isUser');
-        $leaderboard = Trash::selectRaw('user_id, SUM(weight) as total_weight')
+        $leaderboard = SwapTrash::selectRaw('user_id, SUM(total_weight) as total_weight_user')
+            ->where('status', 'done')
             ->groupBy('user_id')
-            ->orderBy('total_weight', 'desc')
+            ->orderBy('total_weight_user', 'desc')
             ->limit(3)
             ->get();
-
-        $userRank = Trash::selectRaw('user_id, SUM(weight) as total_weight')
+        $userRank = SwapTrash::selectRaw('user_id, SUM(total_weight) as total_weight_user')
+            ->where('status', 'done')
             ->groupBy('user_id')
-            ->orderBy('total_weight', 'desc')
+            ->orderBy('total_weight_user', 'desc')
+            ->limit(3)
             ->get();
 
         $userRank = $userRank->search(function ($item, $key) {

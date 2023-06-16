@@ -74,10 +74,9 @@
                 </table>
 
                 <div class="p-4">
-
                 </div>
 
-                <form action="/transactions" method="post">
+                <form action="/swap-trash" method="post">
                     @csrf
                     <div class="trashs">
                         @foreach($trashs as $trash_hidden)

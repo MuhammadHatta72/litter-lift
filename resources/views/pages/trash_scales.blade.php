@@ -25,12 +25,18 @@
                 @foreach ($leaderboard as $item)
                 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:ring-2 hover:ring-offset-2 hover:ring-offset-gray-100 hover:ring-white transition-all duration-300 ease-in-out cursor-default">
                     <div class="flex flex-col items-center justify-center p-4">
-                        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ $item->user->photo }}" alt="avatar">
+                        @if ($item->user->photo !== 'not_found')
+                        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ url('./assets/image_users/'.auth()->user()->photo) }}" alt="user photo">
+                        @else
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-24 h-24 mb-3 rounded-full shadow-lg text-gray-500 dark:text-gray-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        @endif
                         <h5 class="mb-1 text-xl text-center font-medium text-gray-900 dark:text-white">
                             {{ $item->user->name }}
                         </h5>
                         <span class="text-sm text-gray-500 dark:text-gray-400">
-                            {{ $item->total_weight }} gram
+                            {{ $item->total_weight_user }} gram
                         </span>
                     </div>
                 </div>

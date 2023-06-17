@@ -66,10 +66,10 @@
                 </button>
                 <ul id="dropdown-example" class="hidden space-y-0.5">
                     <li>
-                        <a href="{{ url('/') }}" class="flex items-center w-full p-2 text-gray-600 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Pengguna</a>
+                        <a href="{{ url('report-users') }}" class="flex items-center w-full p-2 text-gray-600 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Pengguna</a>
                     </li>
                     <li>
-                        <a href="{{ url('/') }}" class="flex items-center w-full p-2 text-gray-600 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Tukar Sampah</a>
+                        <a href="{{ url('report-swaptrash') }}" class="flex items-center w-full p-2 text-gray-600 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Tukar Sampah</a>
                     </li>
                 </ul>
             </li>

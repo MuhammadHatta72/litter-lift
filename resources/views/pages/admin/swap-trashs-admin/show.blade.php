@@ -89,6 +89,26 @@
                                 </p>
                             </div>
                             <hr>
+                            @if($swap_trash->status == "process")
+                            <div class="flex justify-between my-3">
+                                <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Tukar Dengan :</p>
+                                <p class="block mb-1 text-sm text-gray-500 dark:text-white">
+                                    @if($swap_trash->choose_ticket_money == "ticket")
+                                    Tiket
+                                    @elseif($swap_trash->choose_ticket_money == "money")
+                                    Uang
+                                    @endif
+                                </p>
+                            </div>
+                            <div class="flex justify-between mb-3">
+                                <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Nama Bank :</p>
+                                <p class="block mb-1 text-sm text-gray-500 dark:text-white">{{$swap_trash->bank_name}}</p>
+                            </div>
+                            <div class="flex justify-between mb-3">
+                                <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Nomor Rekening :</p>
+                                <p class="block mb-1 text-sm text-gray-500 dark:text-white">{{$swap_trash->no_rekening}}</p>
+                            </div>
+                            @endif
                             @if($swap_trash->status == "done")
                             <div class="flex justify-between my-3">
                                 <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Tukar Dengan :</p>

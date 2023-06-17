@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SwapTrashUserController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TrashController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
@@ -46,5 +47,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cart-trash', CartTrashController::class);
     Route::resource('swap-trash', SwapTrashController::class);
     Route::resource('swap-trash-user', SwapTrashUserController::class);
+    Route::post('ticket/{id}', [ReportController::class, 'ticket'])->name('ticket');
+    Route::get('report-users', [ReportController::class, 'users'])->name('report-users');
+    Route::get('report-swaptrash', [ReportController::class, 'swapTrash'])->name('report-swaptrash');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

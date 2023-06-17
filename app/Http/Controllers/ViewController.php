@@ -32,10 +32,10 @@ class ViewController extends Controller
             ->limit(3)
             ->get();
 
-        // dd($userRank);
         $userRank = $userRank->search(function ($item, $key) {
             return $item->user_id == auth()->user()->id;
         }) + 1;
+        // dd($userRank, $leaderboard);
         return view('pages.leaderboard', compact('leaderboard', 'userRank'));
     }
 }

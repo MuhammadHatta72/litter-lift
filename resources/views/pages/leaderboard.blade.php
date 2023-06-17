@@ -30,6 +30,11 @@
         </div>
         <div class="w-56 h-96 bg-orange-500 shadow-lg shadow-orange-300 p-5 ml-2">
             <div class="h-full flex flex-col justify-center items-center">
+                @if($leaderboard->count() == 0)
+                <p class="font-roboto font-semibold text-center text-xl md:text-2xl text-gray-200 mt-2">
+                    No Data
+                </p>
+                @else
                 @if ($leaderboard[0]->user->photo !== 'not_found')
                 <img class="w-24 h-24 mt-2 rounded-full" src="{{ url('./assets/image_users/'.$leaderboard[0]->user->photo) }}" alt="user photo">
                 @else
@@ -43,6 +48,7 @@
                 <p class="font-roboto font-medium text-center text-base md:text-xl text-gray-200 mt-2">
                     {{ $leaderboard[0]->total_weight_user }} gram
                 </p>
+                @endif
             </div>
         </div>
         <div class="w-56 h-64 bg-orange-500 shadow-lg shadow-orange-300 p-5 ml-2">

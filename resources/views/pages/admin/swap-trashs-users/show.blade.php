@@ -85,6 +85,26 @@
                                 </p>
                             </div>
                             <hr>
+                            @if($swap_trash->status == "process")
+                            <div class="flex justify-between my-3">
+                                <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Tukar Dengan :</p>
+                                <p class="block mb-1 text-sm text-gray-500 dark:text-white">
+                                    @if($swap_trash->choose_ticket_money == "ticket")
+                                    Tiket
+                                    @elseif($swap_trash->choose_ticket_money == "money")
+                                    Uang
+                                    @endif
+                                </p>
+                            </div>
+                            <div class="flex justify-between mb-3">
+                                <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Nama Bank :</p>
+                                <p class="block mb-1 text-sm text-gray-500 dark:text-white">{{$swap_trash->bank_name}}</p>
+                            </div>
+                            <div class="flex justify-between mb-3">
+                                <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Nomor Rekening :</p>
+                                <p class="block mb-1 text-sm text-gray-500 dark:text-white">{{$swap_trash->no_rekening}}</p>
+                            </div>
+                            @endif
                             @if($swap_trash->status == "done")
                             <div class="flex justify-between my-3">
                                 <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Tukar Dengan :</p>
@@ -96,6 +116,12 @@
                                     @endif
                                 </p>
                             </div>
+                            @if($swap_trash->choose_ticket_money == "ticket")
+                            <form action="{{ url('ticket/' . $swap_trash->id) }}" method="post">
+                                @csrf
+                                <button type="submit" class="w-full bg-[#F24C3D] text-gray-100 hover:text-[#F24C3D] hover:border border-[#F24C3D] hover:bg-white focus:ring-1 focus:outline-none focus:ring-[#F24C3D] font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-[#F24C3D] dark:text-gray-100 dark:hover:text-[#F24C3D] dark:hover:bg-gray-700 dark:focus:ring-[#F24C3D]">Cetak Tiket</button>
+                            </form>
+                            @endif
                             @if($swap_trash->choose_ticket_money !== "ticket")
                             <div class="flex justify-between mb-3">
                                 <p class="block mb-1 text-sm font-medium text-gray-700 dark:text-white">Nama Bank :</p>

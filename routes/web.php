@@ -49,6 +49,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('swap-trash-user', SwapTrashUserController::class);
     Route::post('ticket/{id}', [ReportController::class, 'ticket'])->name('ticket');
     Route::get('report-users', [ReportController::class, 'users'])->name('report-users');
+    Route::post('report-users', [ReportController::class, 'usersReport']);
     Route::get('report-swaptrash', [ReportController::class, 'swapTrash'])->name('report-swaptrash');
+    Route::post('report-swaptrash', [ReportController::class, 'swapTrashReport']);
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

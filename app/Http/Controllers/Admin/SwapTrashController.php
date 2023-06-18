@@ -53,9 +53,9 @@ class SwapTrashController extends Controller
         $total_money = ($total_weight / 1000) * 3000;
         $status_swap = "";
 
-        if ($total_money == 20000) {
+        if ($total_money == 12000) {
             $status_swap = "only_ticket";
-        } elseif ($total_money > 20000) {
+        } elseif ($total_money > 12000) {
             $status_swap = "money_and_ticket";
         } else {
             $status_swap = "only_money";

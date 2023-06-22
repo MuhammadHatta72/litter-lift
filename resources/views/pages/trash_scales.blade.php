@@ -1,7 +1,7 @@
 @extends('layout.index')
 
 @section('content')
-<div class="w-full h-screen bg-cover bg-center bg-scroll flex items-center justify-center" style="background-image: url('{{ asset('images/img6.jpg') }}')">
+<div class="w-full h-screen bg-cover bg-center bg-scroll flex items-center justify-center" style="background-image: url('{{ asset('images/slider2.jpg') }}')">
     <div class="px-6 py-8 lg:px-6 lg:py-8 mx-1 lg:mx-0 flex flex-col bg-gray-200 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 -mt-12 group rounded-xl shadow-md hover:shadow-xl w-full h-full justify-center items-center">
         <h1 class="font-poppins font-bold text-2xl md:text-4xl xl:text-6xl text-white dark:text-gray-300 text-center">
             PANTAI SENDANG BIRU

@@ -20,7 +20,7 @@
             </a>
         </div>
         <div class="md:w-full lg:w-1/2 order-1 md:order-1 lg:order-2">
-            <img src="{{ asset('images/img-psm.png') }}" alt="pantai-sendang-biru" class="w-screen lg:w-full mt-4 md:mt-0">
+            <img src="{{ asset('images/slider.png') }}" alt="pantai-sendang-biru" class="w-screen lg:w-full mt-4 md:mt-0">
         </div>
     </div>
     {{-- End Hero Image --}}
@@ -75,43 +75,39 @@
     </div>
     <div class="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-10 lg:grid-cols-4 lg:gap-6">
         <div class="transform hover:scale-105 hover:shadow-lg hover:rounded-xl duration-300 pb-6 group">
-            <img src="{{ asset('images/img8.jpg') }}" alt="4 Tourist Spots" class="rounded-xl w-full h-96 group-hover:rounded-b-none">
+            <img src="{{ asset('images/toptourist-1.jpg') }}" alt="4 Tourist Spots" class="rounded-xl w-full h-96 group-hover:rounded-b-none">
             <div>
                 <h2 class="mt-4 font-roboto text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                    Pantai
-                    Sendang Biru
+                    Pesisir Pantai
                 </h2>
-                <span class="block mt-2 font-roboto text-sm text-neutral-6000 dark:text-neutral-400">Keterangan</span>
+                <span class="block mt-2 font-roboto text-sm text-neutral-6000 dark:text-neutral-400">Pasir dan air laut yang bersih dan jernih</span>
             </div>
         </div>
         <div class="transform hover:scale-105 hover:shadow-lg hover:rounded-xl duration-300 pb-6 group">
-            <img src="{{ asset('images/img9.jpg') }}" alt="4 Tourist Spots" class="rounded-xl w-full h-96 group-hover:rounded-b-none">
+            <img src="{{ asset('images/toptourist-2.jpg') }}" alt="4 Tourist Spots" class="rounded-xl w-full h-96 group-hover:rounded-b-none">
             <div>
                 <h2 class="mt-4 font-roboto text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                    Pantai
-                    Sendang Biru
+                    Kapal Nelayan
                 </h2>
-                <span class="block mt-2 font-roboto text-sm text-neutral-6000 dark:text-neutral-400">Keterangan</span>
+                <span class="block mt-2 font-roboto text-sm text-neutral-6000 dark:text-neutral-400">Tempat kapal bersandar</span>
             </div>
         </div>
         <div class="transform hover:scale-105 hover:shadow-lg hover:rounded-xl duration-300 pb-6 group">
-            <img src="{{ asset('images/img10.jpg') }}" alt="4 Tourist Spots" class="rounded-xl w-full h-96 group-hover:rounded-b-none">
+            <img src="{{ asset('images/toptourist-3.jpg') }}" alt="4 Tourist Spots" class="rounded-xl w-full h-96 group-hover:rounded-b-none">
             <div>
                 <h2 class="mt-4 font-roboto text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                    Pantai
-                    Sendang Biru
+                    Kapal dan Pulau
                 </h2>
-                <span class="block mt-2 font-roboto text-sm text-neutral-6000 dark:text-neutral-400">Keterangan</span>
+                <span class="block mt-2 font-roboto text-sm text-neutral-6000 dark:text-neutral-400">Kapal nelayan yang sedang beristirahat disebelah pulau</span>
             </div>
         </div>
         <div class="transform hover:scale-105 hover:shadow-lg hover:rounded-xl duration-300 pb-6 group">
-            <img src="{{ asset('images/img4.jpg') }}" alt="4 Tourist Spots" class="rounded-xl w-full h-96 group-hover:rounded-b-none">
+            <img src="{{ asset('images/toptourist-4.jpg') }}" alt="4 Tourist Spots" class="rounded-xl w-full h-96 group-hover:rounded-b-none">
             <div>
                 <h2 class="mt-4 font-roboto text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                    Pantai
-                    Sendang Biru
+                    Pelabuhan Nelayan
                 </h2>
-                <span class="block mt-2 font-roboto text-sm text-neutral-6000 dark:text-neutral-400">Keterangan</span>
+                <span class="block mt-2 font-roboto text-sm text-neutral-6000 dark:text-neutral-400">Tempat nelayan menurunkan hasil tangkapannya</span>
             </div>
         </div>
     </div>
@@ -133,46 +129,46 @@
         <div class="grid grid-cols-2 gap-2 xl:grid-cols-4 xl:gap-4 pb-14">
             <div class="grid gap-4">
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img1.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-1.jpg') }}" alt="">
                 </div>
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img10.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-2.jpg') }}" alt="">
                 </div>
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img2.jpg') }}" alt="">
-                </div>
-            </div>
-            <div class="grid gap-4">
-                <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img4.jpg') }}" alt="">
-                </div>
-                <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img3.jpg') }}" alt="">
-                </div>
-                <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img5.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-3.jpg') }}" alt="">
                 </div>
             </div>
             <div class="grid gap-4">
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img8.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-4.jpg') }}" alt="">
                 </div>
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img6.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-5.jpg') }}" alt="">
                 </div>
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img7.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-6.jpg') }}" alt="">
                 </div>
             </div>
             <div class="grid gap-4">
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img7.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-7.jpg') }}" alt="">
                 </div>
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img4.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-8.jpg') }}" alt="">
                 </div>
                 <div>
-                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/img2.jpg') }}" alt="">
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-9.jpg') }}" alt="">
+                </div>
+            </div>
+            <div class="grid gap-4">
+                <div>
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-10.jpg') }}" alt="">
+                </div>
+                <div>
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-11.jpg') }}" alt="">
+                </div>
+                <div>
+                    <img class="h-auto w-full rounded-lg hover:rotate-2 transform duration-300" src="{{ asset('images/album-12.jpg') }}" alt="">
                 </div>
             </div>
         </div>
